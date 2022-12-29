@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import { Form } from "./Form.js";
+import { Display } from "./Display.js";
+import { List } from "./List.js";
+
+const movieContext = createContext();
+const listContext = createContext();
 
 function App() {
+  const [movieState, setMovieState] = useState("");
+  const [listState, setListState] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <movieContext.Provider value={{ movieState, setMovieState }}>
+      <listContext.Provider value={{ listState, setListState }}>
+        <h1>Make your Movie List</h1>
+        <hr />
+        <Form movieContext={movieContext} />
+        <Display movieContext={movieContext} listContext={listContext} />
+        <List listContext={listContext} />
+      </listContext.Provider>
+    </movieContext.Provider>
   );
 }
 
