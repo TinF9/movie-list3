@@ -74,6 +74,12 @@ hr {
   color: #606d85;
 }
 /* ------------------------------------- */
+.displayState {
+  color: #f00;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
 .display {
   display: flex;
   align-items: center;

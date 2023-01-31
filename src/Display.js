@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { DisplayState } from "./DisplayState.js";
 
 export const Display = (props) => {
   const { movieState } = useContext(props.movieContext);
@@ -8,46 +9,16 @@ export const Display = (props) => {
   const { listState, setListState } = useContext(props.listContext);
 
   if (movieState === "") {
-    return (
-      <>
-        <hr />
-        <h3 style={{ color: "red" }}>Search a movie to see its info.</h3>
-        <hr />
-      </>
-    );
+    return <DisplayState text={"Search a movie to see its info."} />;
   } else if (movieState === "Loading") {
-    return (
-      <>
-        <hr />
-        <h2 style={{ color: "red" }}>Loading...</h2>
-        <hr />
-      </>
-    );
+    return <DisplayState text={"Loading..."} />;
   } else if ("Error" in movieState) {
     if (movieState.Error === "Incorrect IMDb ID.") {
-      return (
-        <>
-          <hr />
-          <h3 style={{ color: "red" }}>Empty input.</h3>
-          <hr />
-        </>
-      );
+      return <DisplayState text={"Empty input."} />;
     } else if (movieState.Error === "Movie not found!") {
-      return (
-        <>
-          <hr />
-          <h3 style={{ color: "red" }}>Sorry, movie not found.</h3>
-          <hr />
-        </>
-      );
+      return <DisplayState text={"Sorry, movie not found."} />;
     } else if (movieState.Error === "Invalid API key!") {
-      return (
-        <>
-          <hr />
-          <h3 style={{ color: "red" }}>Invalid API key.</h3>
-          <hr />
-        </>
-      );
+      return <DisplayState text={"Invalid API key."} />;
     }
   }
 
@@ -95,11 +66,7 @@ export const Display = (props) => {
           </div>
         </div>
       </div>
-      <button
-        type="button"
-        className="button button--display"
-        onClick={addToList}
-      >
+      <button type="button" className="button" onClick={addToList}>
         Add to list
       </button>
       <hr />
