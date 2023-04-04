@@ -3,9 +3,20 @@
 }
 
 body {
-  background-color: #222944;
+  background: url("background-image.png") left top / 11% repeat-y fixed,
+    url("background-image.png") right top / 11% repeat-y fixed, #222044;
   color: #ccc;
   text-align: center;
+  animation: backgroundAnimation 40s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+  from {
+    background-position: left top, right top;
+  }
+  to {
+    background-position: left 100vh, right 100vh;
+  }
 }
 
 h1 {
@@ -20,7 +31,7 @@ hr {
 }
 /* ------------------------------------- */
 .form {
-  background-color: #333d66;
+  background-color: rgba(51, 61, 102, 0.87);
   padding: 30px 0;
   display: block;
 }
