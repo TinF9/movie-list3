@@ -33,9 +33,11 @@ export const Form = (props) => {
         id="searcher"
         name="searcher"
         placeholder="Movie title"
+        aria-label="Enter movie title to search"
         ref={inputVal}
         autoFocus
         required
+        aria-required="true"
       ></input>
       <button type="submit" className="button" onClick={searchHandler}>
         Search Movie
