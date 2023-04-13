@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: 2px solid #f00;
+  outline-offset: 3px;
+}
+
 body {
   background: url("background-image.png") left top / 11% repeat-y fixed,
     url("background-image.png") right top / 11% repeat-y fixed, #222044;
