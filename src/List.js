@@ -50,12 +50,17 @@ export const List = (props) => {
                 <button
                   type="button"
                   className="button--list"
-                  title="Remove"
+                  title="Remove this movie from the list"
+                  aria-label="Remove this movie from the list"
                   onClick={() => {
                     removeMovie(movie.Title);
                   }}
                 >
-                  <span className="material-icons button--listSpan notranslate">
+                  <span
+                    className="material-icons button--listSpan notranslate"
+                    role="img"
+                    aria-hidden="true"
+                  >
                     delete
                   </span>
                 </button>
