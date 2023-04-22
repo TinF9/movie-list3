@@ -3,15 +3,22 @@
 }
 
 :focus {
-  outline: 2px solid #f00;
-  outline-offset: 3px;
+  outline: 2px solid #ddd;
+  outline-offset: 1px;
 }
 
 body {
-  background: url("background-image.png") left top / 11% repeat-y fixed,
-    url("background-image.png") right top / 11% repeat-y fixed, #222044;
+  background: url("bg-img.svg") fixed, #222044;
   color: #ccc;
   text-align: center;
+  margin: 0;
+}
+
+main {
+  background: url("background-image.png") left top / 11% repeat-y fixed,
+    url("background-image.png") right top / 11% repeat-y fixed;
+  padding: 1vh 0 3vh;
+  min-height: 100vh;
   animation: backgroundAnimation 40s linear infinite;
 }
 
@@ -33,12 +40,16 @@ hr {
   background-color: #3c4877;
   height: 2px;
   border-width: 0;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 /* ------------------------------------- */
 .form {
   background-color: rgba(51, 61, 102, 0.87);
   padding: 30px 0;
   display: block;
+  margin: 0 2vw;
+  border-radius: 4px;
 }
 
 .form__searcher {
