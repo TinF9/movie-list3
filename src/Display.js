@@ -37,7 +37,7 @@ export const Display = (props) => {
   return (
     <>
       <hr />
-      <div className="display">
+      <section className="display">
         <div className="display__poster">
           <img src={Poster} alt={Title + " poster image"} />
         </div>
@@ -65,7 +65,7 @@ export const Display = (props) => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
       <button type="button" className="button" onClick={addToList}>
         Add to list
       </button>

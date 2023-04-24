@@ -26,7 +26,7 @@ export const List = (props) => {
         {listState.map((movie) => {
           let key = movie.Title.replaceAll(" ", "");
           return (
-            <div className="display display--list" key={key}>
+            <article className="display display--list" key={key}>
               <div className="display__poster display__poster--list">
                 <img
                   src={movie.Poster}
@@ -65,7 +65,7 @@ export const List = (props) => {
                   </span>
                 </button>
               </div>
-            </div>
+            </article>
           );
         })}
       </section>
